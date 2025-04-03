@@ -127,7 +127,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHj-Hm-9Pg">
                                         <rect key="frame" x="0.0" y="340.33333333333337" width="333" height="41.666666666666686"/>
-                                        <color key="backgroundColor" red="0.94328010082244873" green="0.5963355833805436" blue="0.44433248885850141" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.51372549019607838" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vHj-Hm-9Pg" secondAttribute="height" multiplier="8:1" id="RHt-6X-Wlz"/>
                                         </constraints>
@@ -136,8 +136,13 @@
                                         <buttonConfiguration key="configuration" style="plain" title="LOGIN">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Azb-WP-9uw" kind="show" id="kYw-RL-OIx"/>
+                                            <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KFd-dS-Vih"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -158,6 +163,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Signup here">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Dq-jB-YKe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -184,6 +192,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="q2A-mg-IJb"/>
+                    <connections>
+                        <outlet property="dontHaveAccountLabel" destination="4td-DN-ccA" id="nvi-rk-a21"/>
+                        <outlet property="emailLineView" destination="PEv-c6-c5S" id="XO2-bG-5d6"/>
+                        <outlet property="emailTextField" destination="lDH-Rs-6mp" id="qJ3-KR-S1X"/>
+                        <outlet property="envelopImageView" destination="cOd-4F-L6C" id="Of5-Gc-3zb"/>
+                        <outlet property="lockImageView" destination="TDj-98-day" id="PB9-YP-jik"/>
+                        <outlet property="loginButton" destination="vHj-Hm-9Pg" id="oNf-Cp-lpa"/>
+                        <outlet property="passswordTextField" destination="F8h-vL-DAk" id="KOh-Tg-2MG"/>
+                        <outlet property="passwordLineView" destination="l8s-n3-g18" id="dpw-5G-fGb"/>
+                        <outlet property="signupButton" destination="ScW-nE-W12" id="dtv-2d-YBi"/>
+                        <segue destination="Azb-WP-9uw" kind="show" identifier="goToHomePage" id="L2d-iG-l1k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
