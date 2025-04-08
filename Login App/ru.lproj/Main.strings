@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "4td-DN-ccA"; */
+"4td-DN-ccA.text" = "Don't have an account?";
+
+/* Class = "UINavigationItem"; title = "Second"; ObjectID = "9KY-DK-TjE"; */
+"9KY-DK-TjE.title" = "Second";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "F8h-vL-DAk"; */
+"F8h-vL-DAk.placeholder" = "password";
+
+/* Class = "UIButton"; configuration.title = "Signup here"; ObjectID = "ScW-nE-W12"; */
+"ScW-nE-W12.configuration.title" = "Signup here";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ScW-nE-W12"; */
+"ScW-nE-W12.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "hlw-bc-Cx0"; */
+"hlw-bc-Cx0.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hlw-bc-Cx0"; */
+"hlw-bc-Cx0.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "e-mail"; ObjectID = "lDH-Rs-6mp"; */
+"lDH-Rs-6mp.placeholder" = "e-mail";
+
+/* Class = "UIButton"; configuration.title = "LOGIN"; ObjectID = "vHj-Hm-9Pg"; */
+"vHj-Hm-9Pg.configuration.title" = "LOGIN";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vHj-Hm-9Pg"; */
+"vHj-Hm-9Pg.normalTitle" = "Button";
