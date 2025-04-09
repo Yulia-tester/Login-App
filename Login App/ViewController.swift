@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     private let activeColor = UIColor(named: "notes") ?? UIColor.gray
+    private let errorColor = UIColor(named: "errors") ?? UIColor.gray
     private var email: String = "" {
         didSet {
             loginButton.isUserInteractionEnabled = !(email.isEmpty || password.isEmpty)
@@ -82,7 +83,8 @@ class ViewController: UIViewController {
     
     //  MARK: - Private methods
     private func setupLoginButton() {
-        loginButton.layer.shadowColor = activeColor.cgColor
+        //loginButton.layer.shadowColor = activeColor.cgColor
+        loginButton.layer.shadowColor = UIColor.gray.cgColor
         loginButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         loginButton.layer.shadowOpacity = 0.4
         loginButton.layer.shadowRadius = 8
@@ -137,11 +139,11 @@ extension ViewController: UITextFieldDelegate {
     private func makeErrorField(textField: UITextField) {
         switch textField {
         case emailTextField:
-            envelopImageView.tintColor = .red
-            emailLineView.backgroundColor = .red
+            envelopImageView.tintColor = errorColor
+            emailLineView.backgroundColor = errorColor
         case passswordTextField:
-            lockImageView.tintColor = .red
-            passwordLineView.backgroundColor = .red
+            lockImageView.tintColor = errorColor
+            passwordLineView.backgroundColor = errorColor
         default:
             print("unknown textField")
         }
