@@ -22,8 +22,18 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     private let activeColor = UIColor(named: "notes") ?? UIColor.gray
-    private var email: String = ""
-    private var password: String = ""
+    private var email: String = "" {
+        didSet {
+            loginButton.isUserInteractionEnabled = !(email.isEmpty || password.isEmpty)
+            loginButton.backgroundColor = !(email.isEmpty || password.isEmpty) ? activeColor : .systemGray5
+        }
+    }
+    private var password: String = "" {
+        didSet {
+            loginButton.isUserInteractionEnabled = !(email.isEmpty && password.isEmpty)
+            loginButton.backgroundColor = !(email.isEmpty && password.isEmpty) ? activeColor : .systemGray5
+        }
+    }
     
     private let mockEmail = "abc@gmail.com"
     private let mockPassword = "123456"
@@ -76,6 +86,9 @@ class ViewController: UIViewController {
         loginButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         loginButton.layer.shadowOpacity = 0.4
         loginButton.layer.shadowRadius = 8
+        
+        loginButton.isUserInteractionEnabled = false
+        loginButton.backgroundColor = .systemGray5
     }
 }
 
@@ -92,7 +105,9 @@ extension ViewController: UITextFieldDelegate {
                 email = text
                 envelopImageView.tintColor = .systemGray5
                 emailLineView.backgroundColor = .systemGray5
+                
             } else {
+                email = ""
                 makeErrorField(textField: textField)
             }
         case passswordTextField:
@@ -103,6 +118,7 @@ extension ViewController: UITextFieldDelegate {
                 lockImageView.tintColor = .systemGray5
                 passwordLineView.backgroundColor = .systemGray5
             } else {
+                password = ""
                 makeErrorField(textField: textField)
             }
         default:
@@ -121,11 +137,11 @@ extension ViewController: UITextFieldDelegate {
     private func makeErrorField(textField: UITextField) {
         switch textField {
         case emailTextField:
-            envelopImageView.tintColor = activeColor
-            emailLineView.backgroundColor = activeColor
+            envelopImageView.tintColor = .red
+            emailLineView.backgroundColor = .red
         case passswordTextField:
-            lockImageView.tintColor = activeColor
-            passwordLineView.backgroundColor = activeColor
+            lockImageView.tintColor = .red
+            passwordLineView.backgroundColor = .red
         default:
             print("unknown textField")
         }
